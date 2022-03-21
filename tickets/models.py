@@ -38,3 +38,6 @@ class Ticket(models.Model):
     creator = models.ForeignKey(UserModel, related_name='tickets', on_delete=models.CASCADE)
 
     worker = models.ForeignKey(UserModel, related_name='work_tickets', null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.title
